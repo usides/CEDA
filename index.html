@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  <title>CEDA</title>
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#00956e">
+
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-status-bar-style" content="black" />
+  <meta name="mobile-web-app-title" content="CEDA" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./logo/apple-touch-icon.png">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./logo/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./logo/favicon-16x16.png">
+  <link rel="mask-icon" href="./logo/safari-pinned-tab.svg" color="#5bbad5">
+  <!-- <meta name="msapplication-TileColor" content="#da532c"> -->
+
+</head>
+
+<body>
+  <section id="menu">
+
+    <nav>
+      <ul>
+        <li class="nav-elem active" id="step-1" data-action='component-select' data-header='component'>
+          <img src="./img/comp_logo.svg" alt="step-1">
+          <p>step 1</p>
+        </li>
+        <li class="nav-elem" id="step-2" data-action='ecopack-select' data-header='handling unit'>
+          <img src="./img/ecop_logo.svg" alt="step-2">
+          <p>step 2</p></a>
+        </li>
+        <li class="nav-elem" id="step-3" data-action='mb-select' data-header='mb select'>
+          <img src="./img/mb_logo.svg" alt="step-3">
+          <p>step 3</p></a>
+        </li>
+        <li class="nav-elem" id="step-4" data-action='calculations' data-header='calculations'>
+          <img src="./img/calc_logo.svg" alt="step-4">
+          <p>step 4</p></a>
+        </li>
+        <li class="nav-elem" id="step-5" data-action='details' data-header='item'>
+          <img src="./img/data_logo.svg" alt="step-5">
+          <p>step 5</p></a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <h3 id=top-header>component</h3>
+    </div>
+
+  </section>
+
+  <section id="component-select" class="screen active">
+    <div class="container">
+      <div class="grid">
+        <label for="comp-dim1" class="fir-col">dim 1</label>
+        <div class="sec-col">
+          <input type="number" inputmode="numeric" id="comp-dim1" class="data-input" data-elem="compX"
+            data-pelem="component">
+          <p>mm</p>
+        </div>
+
+        <label for="comp-dim2" class="fir-col">dim 2</label>
+        <div class="sec-col">
+          <input type="number" inputmode="numeric" id="comp-dim2" class="data-input" data-elem="compY"
+            data-pelem="component">
+          <p>mm</p>
+        </div>
+
+        <label for="comp-dim3" class="fir-col">dim 3</label>
+        <div class="sec-col">
+          <input type="number" inputmode="numeric" id="comp-dim3" class="data-input" data-elem="compZ"
+            data-pelem="component">
+          <p>mm</p>
+        </div>
+
+        <label for="comp-wgt" class="fir-col line">weight</label>
+        <div class="sec-col line">
+          <input type="number" inputmode="decimal" id="comp-wgt" class="data-input" data-elem="compWgt"
+            data-pelem="component">
+          <p>kg</p>
+        </div>
+
+        <label for="comp-tqty" inputmode="numeric" class="fir-col">t-qty</label>
+        <div class="sec-col">
+          <input type="number" inputmode="numeric" id="comp-tqty" class="data-input" data-elem="compTurn"
+            data-pelem="component">
+          <p>pcs</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="ecopack-select" class="screen">
+    <div class="container">
+
+      <div class="grid">
+        <label for="eco-height" class="fir-col">height</label>
+        <div class="sec-col">
+          <input type="number" inputmode="numeric" id="eco-height" class="data-input" data-elem="outerHeight"
+            data-pelem="hu" value="990">
+          <p>mm</p>
+        </div>
+      </div>
+
+      <div class="eco-btns-set">
+        <button id="e1208-btn" class="eco-btn" data-type="e1208">e1280</button>
+        <button id="e1210-btn" class="eco-btn" data-type="e1210">e1210</button>
+        <button id="e1308-btn" class="eco-btn" data-type="e1308">e1308</button>
+        <button id="e1512-btn" class="eco-btn" data-type="e1512">e1512</button>
+        <button id="e1612-btn" class="eco-btn" data-type="e1612">e1612</button>
+        <button id="eco-all-btn" class="eco-btn">all</button>
+
+      </div>
+    </div>
+
+  </section>
+
+  <section id="mb-select" class="screen">
+    <div class="container">
+
+      <div class="mb-row">
+        <div class="left">
+          <button id="cfs-btn" class="mb-btn" data-type="cfs">cfs</button>
+          <img src="./img/cfsb.svg" alt="cfs">
+        </div>
+        <div class="right">
+        </div>
+      </div>
+
+      <div class="mb-row">
+        <div class="left">
+          <button id="cpst-btn" class="mb-btn" data-type="cpst">cps-t</button>
+          <img src="./img/cpstb.svg" alt="cpst">
+        </div>
+        <div class="right">
+        </div>
+      </div>
+
+      <div class="mb-row">
+        <div class="left">
+          <button id="cpsf-btn" class="mb-btn" data-type="cpsf">cps-f</button>
+          <img src="./img/cpsfb.svg" alt="cpsf">
+        </div>
+        <div class="right">
+        </div>
+      </div>
+
+      <div class="mb-row">
+        <div class="left">
+          <button id="mb-all-btn" class="mb-btn">all</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="calculations" class="screen">
+    <div class="container">
+
+      <table id="results">
+        <thead>
+          <tr>
+            <th>type</th>
+            <th id="sort-hu" class="active sort-button">qty in hu</th>
+            <th id="sort-tr" class="sort-button">qty in tr</th>
+            <th>qty req</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+
+    </div>
+
+  </section>
+
+  <section id="details" class="screen">
+    <div class="container">
+
+      <div class="block">
+        <p class="header">component</p>
+        <div class="colums">
+          <div>
+            <p>dims</p>
+            <p>wgt</p>
+            <p>t-qty</p>
+          </div>
+          <div>
+            <p data-detail="p-dims"></p>
+            <p data-detail="p-wgt"></p>
+            <p data-detail="p-t-qty"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <p class="header">hu</p>
+        <div class="colums">
+          <div>
+            <p>type </p>
+            <p>outer dims</p>
+            <p>inner dims</p>
+            <p>wgt</p>
+          </div>
+          <div>
+            <p data-detail="box-type"></p>
+            <p data-detail="box-odims"></p>
+            <p data-detail="box-idims"></p>
+            <p data-detail="box-wgt"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <p class="header">mb</p>
+        <div class="colums">
+          <div>
+            <p>type</p>
+            <p>material</p>
+            <p>mb space</p>
+            <p>matrix</p>
+            <p>pocket size</p>
+            <p>capacity</p>
+            <p>mb weight</p>
+          </div>
+          <div>
+            <p data-detail="mb-type"></p>
+            <p data-detail="mb-material"></p>
+            <p data-detail="mb-dims"></p>
+            <p data-detail="mb-matrix"></p>
+            <p data-detail="mb-pocket"></p>
+            <p data-detail="mb-capacity"></p>
+            <p data-detail="mb-wgt"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <p class="header">SOLUTION HU + MB </p>
+        <div class="colums">
+          <div>
+            <p>required qty</p>
+            <p>solution wgt</p>
+            <p>all comp wgt</p>
+            <p>loaded wgt</p>
+          </div>
+          <div>
+            <p data-detail="hu-mb-qty"></p>
+            <p data-detail="hu-mb-wgt"></p>
+            <p data-detail="hu-mb-pwgt"></p>
+            <p data-detail="hu-mb-loaded"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <p class="header">truck</p>
+        <div class="colums">
+          <div>
+            <p>capacity</p>
+            <p>- hu</p>
+            <p>- components</p>
+            <p>cargo wgt</p>
+            <p>required qty</p>
+          </div>
+          <div>
+            <p>:</p>
+            <p data-detail="tr-hu-qty"></p>
+            <p data-detail="tr-comp-qty"></p>
+            <p data-detail="tr-wgt"></p>
+            <p data-detail="tr-qty"></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="error" class="error">
+    <p id="error-msg">Lorem ipsum dolor sit amet.</p>
+  </section>
+
+
+  <script src="js/main.js"></script>
+  <script src="js/ui.js"></script>
+
+
+</body>
+
+</html>
