@@ -2,8 +2,8 @@
   "name": "CEDA",
   "short_name": "CEDA",
   "start_url": ".",
-  "background_color": "#00956e",
-  "theme_color": "#00956e",
+  "background_color": "#d3eae9",
+  "theme_color": "#000",
   "display": "standalone",
   "icons": [
     {
